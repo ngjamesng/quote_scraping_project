@@ -6,3 +6,6 @@ from random import choice
 response = requests.get("http://quotes.toscrape.com/")
 soup = BeautifulSoup(response.text, "html.parser")
 
+quotes = soup.select(".quote")
+
+print(quotes)
