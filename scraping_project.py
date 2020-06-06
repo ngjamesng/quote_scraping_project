@@ -118,10 +118,8 @@ def get_quotes(read, write, scrape):
     it will then scrape for results, save the results, and return the results.
     '''
     try:
-        # see if there is already data in the csv file
         return read("quote_data.csv")
     except FileNotFoundError:
-        #  if not, scrape, save, and return the results
         quotes = scrape()
         write(quotes)
         return quotes
